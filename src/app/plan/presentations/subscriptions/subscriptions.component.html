@@ -1,0 +1,6 @@
+<div *ngFor="let subscription of subscriptions">
+	{{ subscription.name }} 
+	<ng-container *ngIf="subscription.usage">
+		<span *ngFor="let usage of subscription.usage">{{ usage.limit }}</span>
+	</ng-container>
+</div>
