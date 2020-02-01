@@ -1,5 +1,7 @@
 <div>
 	<a *ngFor="let offer of offers" (click)="details(offer)">
-		{{ offer.name }}
+		{{ offer.name }} 
+		<time>{{ offer.contractStartDate | time }}</time> 
+		<time>{{ offer.contractEndDate | time }}</time>
 	</a>	
 </div>

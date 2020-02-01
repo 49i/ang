@@ -49,7 +49,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/design/styles.scss"
             ],
             "scripts": []
           },
