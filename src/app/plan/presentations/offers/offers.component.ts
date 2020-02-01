@@ -5,7 +5,7 @@ import { Offer } from 'src/app/models/offer';
 @Component({
   selector: 'app-offers',
   templateUrl: './offers.component.html',
-  styles: []
+  styleUrls: ['./offers.component.scss'],
 })
 export class OffersComponent implements OnInit {
   private _offers: Offer[] = [];

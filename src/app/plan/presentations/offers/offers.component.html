@@ -1,7 +1,10 @@
-<div>
-	<a *ngFor="let offer of offers" (click)="details(offer)">
-		{{ offer.name }} 
-		<time>{{ offer.contractStartDate | time }}</time> 
-		<time>{{ offer.contractEndDate | time }}</time>
+<div class="lay-out">
+	<a class="offer" *ngFor="let offer of offers" (click)="details(offer)">
+		<h2 class="name">{{ offer.name }}</h2>
+		<p class="duration">
+			<time>{{ offer.contractEndDate | duration: offer.contractStartDate }} Years</time>
+		</p> 
+		<p class="contract">Effective on <time>{{ offer.contractStartDate | time }}</time></p>
 	</a>	
 </div>
+

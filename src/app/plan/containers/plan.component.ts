@@ -8,10 +8,12 @@ import { SelfService } from 'src/app/plan/self.service';
 @Component({
   selector: 'app-plan',
   template: `
-    <app-offers 
-      [offers]="offers$ | async" 
-      (viewDetails)="viewSubscriptions($event)">
-    </app-offers>
+    <app-plan-layout>
+      <app-offers 
+        [offers]="offers$ | async" 
+        (viewDetails)="viewSubscriptions($event)">
+      </app-offers>
+    </app-plan-layout>
   `,
   styles: []
 })

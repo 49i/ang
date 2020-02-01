@@ -7,14 +7,18 @@ import { AppComponent } from './app.component';
 
 import * as containers from './plan/containers';
 import * as presentations from './plan/presentations';
+import * as layouts from './plan/layouts';
 import { TimePipe } from './pipes/time.pipe';
+import { DurationPipe } from './pipes/duration.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ...containers.declarations,
     ...presentations.declarations,
+    ...layouts.declarations,
     TimePipe,
+    DurationPipe,
   ],
   imports: [
     BrowserModule,
