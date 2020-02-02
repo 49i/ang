@@ -6,6 +6,7 @@ import { Component, ViewEncapsulation, OnInit } from '@angular/core';
     <div class="contain">
       <h1 class="title">Your Plan</h1>
       <ng-content select="app-offers"></ng-content>
+      <ng-content select=".loading"></ng-content>
     </div>
   `,
   styleUrls: ['./plan-layout.component.scss'],

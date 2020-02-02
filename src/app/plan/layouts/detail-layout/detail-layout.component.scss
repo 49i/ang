@@ -1,6 +1,33 @@
 @import "src/design/abstracts/variables";
 @import "src/design/abstracts/mixins";
+@import "src/design/themes/theme";
 
+.back-button {
+	margin: 1rem 0;
+	padding: 1.5rem 0.75rem;
+	display: flex;
+	align-items: center;
+	user-select: none;
+	cursor: pointer;
+	border: 2px solid transparent;
+	width: min-content;
+	/* Webkit / Chrome Specific CSS to remove tap highlight color */
+	-webkit-tap-highlight-color: transparent;
+	/* Firefox Specific CSS to remove focus ring */
+	&::-moz-focus-inner { border: 0; }
+  /* The outline parameter suppresses the border color / outline when focused */
+	&:focus {
+		outline: 0;
+		border: 2px solid darken(map-get($theme-colors, "drover"), 10%);
+		border-radius: 50%;
+	}
+	&:hover { color: rgba(black, 0.7); }
+	&:active { 
+		border: 2px solid darken(map-get($theme-colors, "drover"), 20%);
+		border-radius: 50%;
+	}
+	img { margin-right: 0.25rem; }
+}
 .grid {
 	@include documentSpace;
 	display: grid;
@@ -42,8 +69,6 @@
 }
 @media #{$mobile-first} {
 	.grid {
-		margin: 0 auto;
-		max-width: 680px;
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-gap: 0.5rem;

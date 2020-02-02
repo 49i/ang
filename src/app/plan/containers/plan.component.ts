@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable, of } from 'rxjs';
+import { Observable, of, Subject, BehaviorSubject } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 import { Offer } from 'src/app/models/offer';
 import { SelfService } from 'src/app/plan/self.service';
@@ -13,6 +14,7 @@ import { SelfService } from 'src/app/plan/self.service';
         [offers]="offers$ | async" 
         (viewDetails)="viewSubscriptions($event)">
       </app-offers>
+      <div class="loading" *ngIf="loading$ | async"><span>.</span><span>.</span><span>.</span></div>
     </app-plan-layout>
   `,
   styles: []
@@ -34,10 +36,14 @@ export class PlanComponent implements OnInit {
   //   } 
   // ]);
 
+  loading$: Subject<boolean> = new BehaviorSubject<boolean>(true);
+
   constructor(private router: Router, private selfService: SelfService) { }
 
   ngOnInit() {
-    this.offers$ = this.selfService.getOffers();
+    this.offers$ = this.selfService.getOffers().pipe(tap(_ => {
+      this.loading$.next(false);
+    }));
   }
 
   viewSubscriptions(offer: Offer) {
