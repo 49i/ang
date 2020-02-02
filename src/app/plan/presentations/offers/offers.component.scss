@@ -1,5 +1,4 @@
 @import "src/design/themes/theme";
-@import "src/design/abstracts/variables";
 @import "src/design/abstracts/mixins";
 
 .offer {
@@ -27,6 +26,4 @@
 		margin: 0;
 	}
 }
-@media #{$mobile-first} {
 
-}

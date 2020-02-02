@@ -1,16 +1,6 @@
 @import "src/design/abstracts/variables";
 @import "src/design/abstracts/mixins";
 
-.contain {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-}
-h1.title { 
-	margin-top: 4rem;
-	text-align: center;
-	font-size: 2.125rem; 
-}
 .lay-out {
 	@include documentSpace;
 	display: flex;
@@ -25,15 +15,7 @@ h1.title {
 		margin: 0 auto;
 		max-width: 680px; 
 		.offer {
-			margin: 4rem 1rem;
+			margin: 0 1rem;
 		}
-	}
-}
-@media #{$mobile-first} {
-	h1.title { 
-		font-size: 2.25rem; 
-	}
-	.contain {
-		height: 100vh;
 	}
 }

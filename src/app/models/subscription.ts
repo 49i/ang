@@ -5,7 +5,7 @@ export interface Subscription {
 	usage?: Usage[];
 }
 
-interface Usage {
+export interface Usage {
 	type: 'DATA' | 'SMS';
 	used: number;
 	limit: number;

@@ -1,6 +1,18 @@
-<div *ngFor="let subscription of subscriptions">
-	{{ subscription.name }} 
-	<ng-container *ngIf="subscription.usage">
-		<span *ngFor="let usage of subscription.usage">{{ usage.limit }}</span>
-	</ng-container>
+<div class="grid">
+	<div class="subscription" [ngClass]="{usage: subscription.usage}" *ngFor="let subscription of subscriptions">
+		<div class="type-container">
+			<ng-container [ngSwitch]="subscription.type">
+				<div class="type" *ngSwitchCase="'MOBILE'">📱</div>
+				<div class="type" *ngSwitchCase="'TELEVISION'">🎞</div>
+				<div class="type" *ngSwitchCase="'INTERNET'">🌐</div>
+				<div class="type" *ngSwitchCase="'TELEPHONY'">📞</div>
+			</ng-container>
+			<p class="name">{{ subscription.name }}</p> 
+		</div>
+		<div class="usage-container" *ngIf="subscription.usage">
+			<ng-container *ngFor="let usage of subscription.usage">
+				<app-usage [usage]="usage"></app-usage>
+			</ng-container>
+		</div>
+	</div>
 </div>

@@ -1,0 +1,23 @@
+@import "src/design/abstracts/variables";
+@import "src/design/themes/theme";
+
+.body {
+	height: 0.625rem;
+	background: rgba(map-get($theme-colors, "iron"), .5);
+	border-radius: 0.5rem;
+}
+.used, .limit {
+	margin: 0.25rem 0 0 0;
+	width: 50%; 
+	display: inline-block;
+	font-size: 0.75rem; 
+	font-weight: 300;
+}
+.used { text-align: left; }
+.limit { text-align: right; }
+
+@media #{$mobile-first} {
+	.used, .limit {
+		margin: 0.625rem 0 0 0;
+	}
+}

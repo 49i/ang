@@ -6,9 +6,16 @@
 	font-family: "SF Pro Text";
 	src: url("/assets/SF-Pro-Text-Regular") format("otf");
 }
+@font-face {
+	font-family: "Apple Color Emoji";
+	src: url("/assets/AppleColorEmoji") format("otf");
+}
 *, body {
 	font-family: "SF Pro Text", sans-serif;
 }
 h1, h2, h3, h4 {
 	font-family: "SF Pro Display", sans-serif;
+}
+.type {
+	font-family: "Apple Color Emoji";
 }

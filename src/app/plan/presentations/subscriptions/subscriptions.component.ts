@@ -5,7 +5,7 @@ import { Subscription } from 'src/app/models/subscription';
 @Component({
   selector: 'app-subscriptions',
   templateUrl: './subscriptions.component.html',
-  styles: []
+  styleUrls: ['./subscriptions.component.scss']
 })
 export class SubscriptionsComponent implements OnInit {
   private _subscriptions: Subscription[] = [];

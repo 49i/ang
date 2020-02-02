@@ -1,7 +1,7 @@
 import { PlanComponent } from './plan.component';
-import { DetailsComponent } from './details.component';
+import { DetailComponent } from './detail.component';
 
-export const declarations: any[] = [PlanComponent, DetailsComponent];
+export const declarations: any[] = [PlanComponent, DetailComponent];
 
 export * from './plan.component';
-export * from './details.component';
+export * from './detail.component';

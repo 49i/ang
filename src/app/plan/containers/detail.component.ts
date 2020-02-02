@@ -7,13 +7,16 @@ import { SelfService } from 'src/app/plan/self.service';
 
 
 @Component({
-  selector: 'app-details',
+  selector: 'app-detail',
   template: `
-    <app-subscriptions [subscriptions]="subscriptions$ | async"></app-subscriptions>
+    <app-detail-layout [titleId]="id">
+      <app-subscriptions [subscriptions]="subscriptions$ | async">
+      </app-subscriptions>
+    </app-detail-layout>
   `,
   styles: []
 })
-export class DetailsComponent implements OnInit {
+export class DetailComponent implements OnInit {
   subscriptions$: Observable<Subscription[]>;
   id: number;
 

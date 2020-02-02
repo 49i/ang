@@ -4,8 +4,9 @@ import { Routes, RouterModule } from '@angular/router';
 import * as containers from './plan/containers';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', component: containers.PlanComponent },
-  { path: 'offers/:id', component: containers.DetailsComponent },
+{ path: 'offers', component: containers.PlanComponent },
+  { path: '', redirectTo: '/offers', pathMatch: 'full' },
+  { path: 'offers/:id', component: containers.DetailComponent },
   { path: '**', component: containers.PlanComponent }
 ];
 
